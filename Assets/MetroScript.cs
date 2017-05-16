@@ -17,12 +17,12 @@ public class MetroScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	if(Input.GetKeyDown(KeyCode.E))
-	{
-		nextStation = true;
-	}
+		if(Input.GetKeyDown(KeyCode.E))
+		{
+			nextStation = true;
+		}
 
-		if (playerIsNear == true && nextStation == true){
+			if (playerIsNear == true && nextStation == true){
 
 				if(transform.position != target[current].position)
 				{
@@ -40,7 +40,7 @@ public class MetroScript : MonoBehaviour {
 					
 				}
 			}
-		}
+	}
 
 	void OnTriggerEnter(Collider other)
 	{
