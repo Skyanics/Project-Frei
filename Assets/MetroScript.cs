@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MetroScript : MonoBehaviour {
+
 	public Transform[] target;
 	public float speed;
+	[SerializeField]
 	private int current;
 
 	public float Damping = 100.0f;
@@ -12,16 +14,25 @@ public class MetroScript : MonoBehaviour {
 	public bool playerIsNear = false;
 
 	public bool nextStation;
+	
+	public int EndPoint;
+
+	private Collider other;
 
 	
-	// Update is called once per frame
+
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.E))
+
+	other = GameObject.Find("Player").GetComponent<CapsuleCollider>();
+		if(Input.GetKeyDown(KeyCode.E) && playerIsNear == true)
 		{
 			nextStation = true;
+			other.transform.SetParent(this.gameObject.transform);
+			other.transform.rotation = other.transform.rotation;
+			GetComponent<AudioSource>().Play();
 		}
 
-			if (playerIsNear == true && nextStation == true){
+		if (playerIsNear == true && nextStation == true){
 
 				if(transform.position != target[current].position)
 				{
@@ -29,38 +40,39 @@ public class MetroScript : MonoBehaviour {
 					Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
 					var rotation = Quaternion.LookRotation (target[current].position - transform.position);
 					transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * Damping);
-					GetComponent<Rigidbody>().MovePosition(pos);
+					transform.position = pos;
 					speed = 5;
+					
 				}
 
 				else {
 					current = (current + 1) % target.Length;
-					nextStation = false;
+					if (current == EndPoint)
+						{
+							nextStation = false;
+							GetComponent<AudioSource>().Stop();
+						}
 					
 				}
 			}
+		}
 
-		
-	}
-
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter()
 	{
 		if(other.tag == "Player")
 		{
-			playerIsNear = true;		
-		
-
+				
+				playerIsNear = true;	
 		}
 	}
 
-
-	
-
-	void OnTriggerExit(Collider other)
+	void OnTriggerExit()
 	{
 		if(other.tag == "Player")
 		{
+			other.transform.SetParent(null);
 			playerIsNear = false;
+			
 		}
 	}
 
@@ -68,6 +80,7 @@ public class MetroScript : MonoBehaviour {
 	{
 		if (playerIsNear == true)
 		{
+			
 			 GUI.Label(new Rect(Screen.width /2, Screen.height / 2, 100, 20), "Hello World!");
 		}
 	}

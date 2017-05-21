@@ -8,15 +8,24 @@ public class FlashlightScript : MonoBehaviour {
 	private GameObject flashLight;
 	private bool isTurnedOn;
 	private Light lt;
+	[SerializeField]
 	private float batteryLife = 8;
 
 	public Slider flashLightUI;
 	public Image filler;
+
+	public AudioSource aS;
+	public AudioClip charge;
+	public AudioClip onAndOff;
+
+	public bool isPlaying = false;
+
 	// Use this for initialization
 	void Start () {
 		flashLight = this.gameObject;
 		isTurnedOn = false;
 		lt = flashLight.GetComponent<Light>();
+		aS = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -57,18 +66,31 @@ public class FlashlightScript : MonoBehaviour {
 		{
 			batteryLife += Time.deltaTime / 5;
 		}
+
+		else if (Input.GetKeyUp(KeyCode.R))
+		{
+			aS.Stop();
+		}
+
+		if(Input.GetKeyDown(KeyCode.R))
+		{
+			aS.clip = charge;
+			aS.Play();
+		}
 		
 
 		if(Input.GetKeyDown(KeyCode.F) && isTurnedOn == false)
 		{
 			flashLight.GetComponent<Light>().enabled = true;
 			isTurnedOn = true;
+			aS.PlayOneShot(onAndOff);
 		}
 
 		else if (Input.GetKeyDown(KeyCode.F) && isTurnedOn == true)
 		{
 			flashLight.GetComponent<Light>().enabled = false;
 			isTurnedOn = false;
+			aS.PlayOneShot(onAndOff);
 		}
 		
 	}
