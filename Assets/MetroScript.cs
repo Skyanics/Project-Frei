@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MetroScript : MonoBehaviour {
-
 	public Transform[] target;
 	public float speed;
 	private int current;
@@ -17,12 +16,12 @@ public class MetroScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	if(Input.GetKeyDown(KeyCode.E))
-	{
-		nextStation = true;
-	}
+		if(Input.GetKeyDown(KeyCode.E))
+		{
+			nextStation = true;
+		}
 
-		if (playerIsNear == true && nextStation == true){
+			if (playerIsNear == true && nextStation == true){
 
 				if(transform.position != target[current].position)
 				{
@@ -40,15 +39,22 @@ public class MetroScript : MonoBehaviour {
 					
 				}
 			}
-		}
+
+		
+	}
 
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == "Player")
 		{
-				playerIsNear = true;	
+			playerIsNear = true;		
+		
+
 		}
 	}
+
+
+	
 
 	void OnTriggerExit(Collider other)
 	{
