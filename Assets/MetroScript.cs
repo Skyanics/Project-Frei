@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MetroScript : MonoBehaviour {
-
 	public Transform[] target;
 	public float speed;
 	private int current;
@@ -40,15 +39,22 @@ public class MetroScript : MonoBehaviour {
 					
 				}
 			}
+
+		
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == "Player")
 		{
-				playerIsNear = true;	
+			playerIsNear = true;		
+		
+
 		}
 	}
+
+
+	
 
 	void OnTriggerExit(Collider other)
 	{
