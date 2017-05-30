@@ -27,8 +27,7 @@ public class MetroScript : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.E) && playerIsNear == true)
 		{
 			nextStation = true;
-			other.transform.SetParent(this.gameObject.transform);
-			other.transform.rotation = other.transform.rotation;
+			other.transform.SetParent(this.gameObject.transform,true);
 			GetComponent<AudioSource>().Play();
 		}
 
