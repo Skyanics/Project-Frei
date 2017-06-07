@@ -20,12 +20,15 @@ public class FlashlightScript : MonoBehaviour {
 
 	public bool isPlaying = false;
 
+	public Animator anmr;
+
 	// Use this for initialization
 	void Start () {
 		flashLight = this.gameObject;
 		isTurnedOn = false;
 		lt = flashLight.GetComponent<Light>();
 		aS = GetComponent<AudioSource>();
+		anmr = GameObject.Find("FPS ARMS RIG 1").GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -67,10 +70,18 @@ public class FlashlightScript : MonoBehaviour {
 			batteryLife += Time.deltaTime / 5;
 		}
 
+		if(Input.GetKey(KeyCode.R))
+		{
+			anmr.SetBool("charging", true);
+		}
+
 		else if (Input.GetKeyUp(KeyCode.R))
 		{
 			aS.Stop();
+			anmr.SetBool("charging", false);
+			anmr.StopPlayback();
 		}
+
 
 		if(Input.GetKeyDown(KeyCode.R))
 		{

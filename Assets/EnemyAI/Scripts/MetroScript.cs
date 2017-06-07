@@ -7,7 +7,7 @@ public class MetroScript : MonoBehaviour {
 	public Transform[] target;
 	public float speed;
 	[SerializeField]
-	private int current;
+	public int current;
 
 	public float Damping = 100.0f;
 
@@ -46,11 +46,6 @@ public class MetroScript : MonoBehaviour {
 
 				else {
 					current = (current + 1) % target.Length;
-					if (current == EndPoint)
-						{
-							nextStation = false;
-							GetComponent<AudioSource>().Stop();
-						}
 					
 				}
 			}
