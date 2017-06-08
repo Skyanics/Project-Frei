@@ -24,7 +24,7 @@ public class MetroScript : MonoBehaviour {
 	void Update () {
 
 	other = GameObject.Find("Player").GetComponent<CapsuleCollider>();
-		if(Input.GetKeyDown(KeyCode.E) && playerIsNear == true)
+		if(Input.GetKeyDown(KeyCode.E) && playerIsNear == true || Input.GetButtonDown("Activate") && playerIsNear == true)
 		{
 			nextStation = true;
 			other.transform.SetParent(this.gameObject.transform,true);
@@ -75,7 +75,7 @@ public class MetroScript : MonoBehaviour {
 		if (playerIsNear == true)
 		{
 			
-			 GUI.Label(new Rect(Screen.width /2, Screen.height / 2, 100, 20), "Hello World!");
+			 GUI.Label(new Rect(Screen.width /2, Screen.height / 2, 100, 20), "A - Activate");
 		}
 	}
 }

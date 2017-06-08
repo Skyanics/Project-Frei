@@ -47,16 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\EnemyAI\Scripts\Chase.cs" />
-     <Compile Include="Assets\EnemyAI\Scripts\FlashlightScript.cs" />
      <Compile Include="Assets\EnemyAI\Scripts\HearingScript.cs" />
-     <Compile Include="Assets\EnemyAI\Scripts\MetroScript.cs" />
      <Compile Include="Assets\EnemyAI\Scripts\PickUpKey.cs" />
      <Compile Include="Assets\EnemyAI\Scripts\PlayerSoundSignal.cs" />
      <Compile Include="Assets\EnemyAI\Scripts\SoundSignal.cs" />
-     <Compile Include="Assets\EnemyAI\Scripts\StationScript.cs" />
      <Compile Include="Assets\EnemyAI\Scripts\UnlockDoor.cs" />
-     <Compile Include="Assets\MenuScript.cs" />
      <Compile Include="Assets\Prefabs\LoadingScreen1.cs" />
+     <Compile Include="Assets\SanScripts\FlashlightScript.cs" />
+     <Compile Include="Assets\SanScripts\MenuScript.cs" />
+     <Compile Include="Assets\SanScripts\MetroScript.cs" />
+     <Compile Include="Assets\SanScripts\StationScript.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

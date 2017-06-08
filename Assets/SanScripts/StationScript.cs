@@ -18,11 +18,6 @@ public class StationScript : MonoBehaviour {
 			{
 				metro.GetComponent<MetroScript>().current = (metro.GetComponent<MetroScript>().current - 1) % metro.GetComponent<MetroScript>().target.Length;
 			}
-
-			if( isFirstStation == true)
-			{
-				metro.GetComponent<MetroScript>().current = (metro.GetComponent<MetroScript>().current + 1) % metro.GetComponent<MetroScript>().target.Length;
-			}
 		}
 	}
 

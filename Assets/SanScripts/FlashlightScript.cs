@@ -65,17 +65,17 @@ public class FlashlightScript : MonoBehaviour {
 			
 		}
 
-		if(Input.GetKey(KeyCode.R) && batteryLife < 8)
+		if(Input.GetKey(KeyCode.R) && batteryLife < 8 || Input.GetButton("Recharge") && batteryLife < 8)
 		{
 			batteryLife += Time.deltaTime / 5;
 		}
 
-		if(Input.GetKey(KeyCode.R))
+		if(Input.GetKey(KeyCode.R) || Input.GetButton("Recharge"))
 		{
 			anmr.SetBool("charging", true);
 		}
 
-		else if (Input.GetKeyUp(KeyCode.R))
+		else if (Input.GetKeyUp(KeyCode.R) || Input.GetButtonUp("Recharge"))
 		{
 			aS.Stop();
 			anmr.SetBool("charging", false);
@@ -83,21 +83,21 @@ public class FlashlightScript : MonoBehaviour {
 		}
 
 
-		if(Input.GetKeyDown(KeyCode.R))
+		if(Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Recharge"))
 		{
 			aS.clip = charge;
 			aS.Play();
 		}
 		
 
-		if(Input.GetKeyDown(KeyCode.F) && isTurnedOn == false)
+		if(Input.GetKeyDown(KeyCode.F) && isTurnedOn == false || Input.GetButtonDown("EnableFlashlight") && isTurnedOn == false)
 		{
 			flashLight.GetComponent<Light>().enabled = true;
 			isTurnedOn = true;
 			aS.PlayOneShot(onAndOff);
 		}
 
-		else if (Input.GetKeyDown(KeyCode.F) && isTurnedOn == true)
+		else if (Input.GetKeyDown(KeyCode.F) && isTurnedOn == true || Input.GetButtonDown("EnableFlashlight") && isTurnedOn == true)
 		{
 			flashLight.GetComponent<Light>().enabled = false;
 			isTurnedOn = false;
