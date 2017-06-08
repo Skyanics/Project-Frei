@@ -55,6 +55,7 @@
      <Compile Include="Assets\EnemyAI\Scripts\SoundSignal.cs" />
      <Compile Include="Assets\EnemyAI\Scripts\StationScript.cs" />
      <Compile Include="Assets\EnemyAI\Scripts\UnlockDoor.cs" />
+     <Compile Include="Assets\MenuScript.cs" />
      <Compile Include="Assets\Prefabs\LoadingScreen1.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
