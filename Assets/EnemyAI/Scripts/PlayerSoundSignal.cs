@@ -6,16 +6,16 @@ public class PlayerSoundSignal : MonoBehaviour {
 
 	public GameObject enemy;
 	HearingScript enemyHearing;
-	AudioSource audio;
+	AudioSource source;
 
 	// Use this for initialization
 	void Start () {
 		enemyHearing = enemy.GetComponent<HearingScript> ();
-		audio = GetComponent<AudioSource> ();
+		source = GetComponent<AudioSource> ();
 	}
 
 	void Update() {
-		if (audio.isPlaying) {
+		if (source.isPlaying) {
 			enemyHearing.HearNoise (gameObject);
 		}
 	}

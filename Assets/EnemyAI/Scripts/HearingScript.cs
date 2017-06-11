@@ -17,7 +17,6 @@ public class HearingScript : MonoBehaviour {
 
 	public void HearNoise(GameObject noise) {
 		dist = Vector3.Distance(noise.transform.position, transform.position);
-		Debug.Log (dist);
 		if (dist < range) {
 			chaseScript.agent.SetDestination (noise.transform.position);
 		}
