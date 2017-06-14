@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Chase : MonoBehaviour {
 
 	public GameObject player;
 	static Animator anim;
 
+	public GameObject panel;
 	public GameObject[] points;
 	public NavMeshAgent agent;
 	private int destPoint = 0;
 	private bool isCoroutineExecuting = false;
 
-	private float hp;
+	private float playerHP;
 
 
 	// Use this for initialization
@@ -25,7 +27,7 @@ public class Chase : MonoBehaviour {
 
 		StartCoroutine(GoToNextPoint (5));
 
-		hp = 5;
+		playerHP = 5;
 	}
 
 	IEnumerator GoToNextPoint(float time)
@@ -80,14 +82,18 @@ public class Chase : MonoBehaviour {
 			anim.SetBool("isAttacking",false);
 		}
 
-		if (hp <= 0) {
+		if (playerHP <= 0) {
 			//player dead
 		}
 	}
 
 	void OnCollisionEnter(Collision col) {
 		if (col.gameObject == player) {
-			hp -= 1;
+			playerHP -= 1;
+			//panel.SetActive = true;
 		}
+	}
+	void OnCollisionExit(Collision col) {
+		//panel.SetActive = false;
 	}
 }

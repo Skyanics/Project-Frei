@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Audio\TriggerScript.cs" />
      <Compile Include="Assets\EnemyAI\Scripts\Chase.cs" />
      <Compile Include="Assets\EnemyAI\Scripts\HearingScript.cs" />
      <Compile Include="Assets\EnemyAI\Scripts\PickUpKey.cs" />
