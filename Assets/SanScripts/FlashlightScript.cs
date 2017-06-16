@@ -22,6 +22,8 @@ public class FlashlightScript : MonoBehaviour {
 
 	public Animator anmr;
 
+	public float rechargeMultiplier;
+
 	// Use this for initialization
 	void Start () {
 		flashLight = this.gameObject;
@@ -67,7 +69,7 @@ public class FlashlightScript : MonoBehaviour {
 
 		if(Input.GetKey(KeyCode.R) && batteryLife < 8 || Input.GetButton("Recharge") && batteryLife < 8)
 		{
-			batteryLife += Time.deltaTime / 5;
+			batteryLife += Time.deltaTime * rechargeMultiplier;
 		}
 
 		if(Input.GetKey(KeyCode.R) || Input.GetButton("Recharge"))
