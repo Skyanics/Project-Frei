@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.UI;
+
 public class HidingScript : MonoBehaviour {
 
 	public bool playerIsNear;
@@ -10,6 +12,7 @@ public class HidingScript : MonoBehaviour {
 	public GameObject exitPoint;
 	public GameObject enterPoint;
 	public int timesActivated = 0;
+	public Text interactText; 
 
 	void Update () {
 		
@@ -22,7 +25,7 @@ public class HidingScript : MonoBehaviour {
 			player.GetComponent<RigidbodyFirstPersonController>().enabled = false;
 
 			player.transform.position = enterPoint.transform.position;
-			player.transform.rotation = Quaternion.Euler(0,15,0);
+			player.transform.rotation = enterPoint.transform.rotation;
 
 			timesActivated += 1;
 		}
@@ -52,6 +55,7 @@ public class HidingScript : MonoBehaviour {
 		if(other.tag == ("Player"))
 		{
 			playerIsNear = true;
+			interactText.text = "(A) Hide";
 		}
 	}
 
@@ -61,6 +65,7 @@ public class HidingScript : MonoBehaviour {
 		{
 			playerIsNear = false;
 			playerIsHidden = false;
+			interactText.text = " ";
 		}
 	}
 }

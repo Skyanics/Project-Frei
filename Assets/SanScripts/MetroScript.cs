@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MetroScript : MonoBehaviour {
 
@@ -18,6 +19,7 @@ public class MetroScript : MonoBehaviour {
 	public int EndPoint;
 
 	private Collider other;
+	public Text interactText;
 
 	
 
@@ -56,7 +58,12 @@ public class MetroScript : MonoBehaviour {
 		if(other.tag == "Player")
 		{
 				
-				playerIsNear = true;	
+			playerIsNear = true;	
+			if (!nextStation) {
+				interactText.text = "(A) Ride the metro";
+			} else {
+				interactText.text = " ";
+			}
 		}
 	}
 
@@ -66,6 +73,7 @@ public class MetroScript : MonoBehaviour {
 		{
 			other.transform.SetParent(null);
 			playerIsNear = false;
+			interactText.text = " ";
 			
 		}
 	}
