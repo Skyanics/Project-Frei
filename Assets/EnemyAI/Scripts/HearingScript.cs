@@ -6,7 +6,6 @@ public class HearingScript : MonoBehaviour {
 
 	public float range;
 	UnlockDoor doorNoise;
-	public GameObject item;
 	public float dist;
 
 	Chase chaseScript;

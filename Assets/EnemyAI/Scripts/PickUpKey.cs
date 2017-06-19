@@ -18,7 +18,7 @@ public class PickUpKey : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		aim = GameObject.Find ("FirstPersonCharacter").transform;
+		aim = GameObject.Find ("Player").transform;
 		hasKey = false;
 		holdItem = false;
 	}

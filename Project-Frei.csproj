@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7732A073-AB62-9382-3F7D-E7ADE919957B}</ProjectGuid>
+    <ProjectGuid>{BFB296DA-8A6B-C94B-E3DA-ABEA3FA66420}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -76,20 +76,14 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
     <Reference Include="Facebook.Unity.Settings">
       <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Project-Frei.Plugins.csproj">
-      <Project>{F1FDD55A-5E9E-AEB0-6CD3-C6A6438AAA62}</Project>
-      <Name>Project-Frei.Plugins</Name>
+    <ProjectReference Include="Project-FREI.Plugins.csproj">
+      <Project>{91987F9F-581C-6A9E-9557-5007E93CE225}</Project>
+      <Name>Project-FREI.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
