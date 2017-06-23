@@ -25,8 +25,17 @@ public class MetroScript : MonoBehaviour {
 
 	void Update () {
 
-	other = GameObject.Find("Player").GetComponent<CapsuleCollider>();
-		if(Input.GetKeyDown(KeyCode.E) && playerIsNear == true || Input.GetButtonDown("Activate") && playerIsNear == true)
+		other = GameObject.Find("Player").GetComponent<CapsuleCollider>();
+
+		if (nextStation == false && playerIsNear == true) {
+			interactText.text = "(A) Ride the metro";
+		} 
+
+		if(nextStation == true){
+			interactText.text = " ";
+		}
+
+		if(Input.GetKeyDown(KeyCode.E) && playerIsNear == true && nextStation == false || Input.GetButtonDown("Activate") && playerIsNear == true && nextStation == false)
 		{
 			nextStation = true;
 			other.transform.SetParent(this.gameObject.transform,true);
@@ -59,11 +68,6 @@ public class MetroScript : MonoBehaviour {
 		{
 				
 			playerIsNear = true;	
-			if (!nextStation) {
-				interactText.text = "(A) Ride the metro";
-			} else {
-				interactText.text = " ";
-			}
 		}
 	}
 
