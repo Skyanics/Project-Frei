@@ -21,6 +21,7 @@ public class MetroScript : MonoBehaviour {
 	private Collider other;
 	public Text interactText;
 
+
 	
 
 	void Update () {
@@ -29,16 +30,17 @@ public class MetroScript : MonoBehaviour {
 
 		if (nextStation == false && playerIsNear == true) {
 			interactText.text = "(A) Ride the metro";
+			if (Input.GetButtonDown ("Activate")) {
+				interactText.text = " ";
+			}
 		} 
-
-		if(nextStation == true){
-			interactText.text = " ";
-		}
 
 		if(Input.GetKeyDown(KeyCode.E) && playerIsNear == true && nextStation == false || Input.GetButtonDown("Activate") && playerIsNear == true && nextStation == false)
 		{
 			nextStation = true;
+			var rotation = other.transform.rotation;
 			other.transform.SetParent(this.gameObject.transform,true);
+			other.transform.rotation = rotation;
 			GetComponent<AudioSource>().Play();
 		}
 
@@ -46,7 +48,6 @@ public class MetroScript : MonoBehaviour {
 
 				if(transform.position != target[current].position)
 				{
-					
 					Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
 					var rotation = Quaternion.LookRotation (target[current].position - transform.position);
 					transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * Damping);
@@ -79,15 +80,6 @@ public class MetroScript : MonoBehaviour {
 			playerIsNear = false;
 			interactText.text = " ";
 			
-		}
-	}
-
-	void OnGui()
-	{
-		if (playerIsNear == true)
-		{
-			
-			 GUI.Label(new Rect(Screen.width /2, Screen.height / 2, 100, 20), "A - Activate");
 		}
 	}
 }

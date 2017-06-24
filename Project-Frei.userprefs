@@ -8,7 +8,12 @@
       <File FileName="Assets\EnemyAI\Scripts\PlayerSoundSignal.cs" Line="1" Column="1" />
       <File FileName="Assets\EnemyAI\Scripts\PickUpKey.cs" Line="1" Column="1" />
       <File FileName="Assets\EnemyAI\Scripts\Chase.cs" Line="1" Column="1" />
-      <File FileName="Assets\SanScripts\MetroScript.cs" Line="30" Column="51" />
+      <File FileName="Assets\SanScripts\MetroScript.cs" Line="34" Column="29" />
+      <File FileName="Assets\SanScripts\NoteScript.cs" Line="18" Column="27" />
+      <File FileName="Assets\SanScripts\FlashlightScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\SanScripts\CutsceneScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\SanScripts\StationScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\SanScripts\MonsterRandomSoundScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
