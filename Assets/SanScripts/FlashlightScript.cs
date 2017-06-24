@@ -9,7 +9,7 @@ public class FlashlightScript : MonoBehaviour {
 	private bool isTurnedOn;
 	private Light lt;
 	[SerializeField]
-	private float batteryLife = 8;
+	public float batteryLife = 8;
 
 	public Slider flashLightUI;
 	public Image filler;

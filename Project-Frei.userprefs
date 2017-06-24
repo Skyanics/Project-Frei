@@ -1,6 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SanScripts\MetroScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SanScripts\VoiceScript.cs">
     <Files>
       <File FileName="Assets\EnemyAI\Scripts\HearingScript.cs" Line="1" Column="1" />
       <File FileName="Assets\EnemyAI\Scripts\SoundSignal.cs" Line="1" Column="1" />
@@ -8,12 +8,12 @@
       <File FileName="Assets\EnemyAI\Scripts\PlayerSoundSignal.cs" Line="1" Column="1" />
       <File FileName="Assets\EnemyAI\Scripts\PickUpKey.cs" Line="1" Column="1" />
       <File FileName="Assets\EnemyAI\Scripts\Chase.cs" Line="1" Column="1" />
-      <File FileName="Assets\SanScripts\MetroScript.cs" Line="34" Column="29" />
-      <File FileName="Assets\SanScripts\NoteScript.cs" Line="18" Column="27" />
+      <File FileName="Assets\SanScripts\MetroScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\SanScripts\NoteScript.cs" Line="1" Column="1" />
       <File FileName="Assets\SanScripts\FlashlightScript.cs" Line="1" Column="1" />
       <File FileName="Assets\SanScripts\CutsceneScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\SanScripts\StationScript.cs" Line="1" Column="1" />
       <File FileName="Assets\SanScripts\MonsterRandomSoundScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\SanScripts\VoiceScript.cs" Line="45" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

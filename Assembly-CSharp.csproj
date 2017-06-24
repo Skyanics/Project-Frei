@@ -62,6 +62,7 @@
      <Compile Include="Assets\SanScripts\MonsterRandomSoundScript.cs" />
      <Compile Include="Assets\SanScripts\NoteScript.cs" />
      <Compile Include="Assets\SanScripts\StationScript.cs" />
+     <Compile Include="Assets\SanScripts\VoiceScript.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
