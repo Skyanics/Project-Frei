@@ -5,22 +5,24 @@ using UnityEngine;
 public class PickUpKey : MonoBehaviour {
 
 	private Transform aim;
+    private AudioSource sound;
 	public bool hasKey;
 
 	public GameObject key;
 	public float pickupRange;
 	public Camera cam;
 
-	public GameObject item;
-	public Transform heldPos;
-	private bool holdItem;
-	public Rigidbody rbItem;
+	//public GameObject item;
+	//public Transform heldPos;
+	//private bool holdItem;
+	//public Rigidbody rbItem;
 
 	// Use this for initialization
 	void Start () {
 		aim = GameObject.Find ("Player").transform;
 		hasKey = false;
-		holdItem = false;
+        sound = GetComponent<AudioSource>();
+		//holdItem = false;
 	}
 	
 	// Update is called once per frame
@@ -32,25 +34,28 @@ public class PickUpKey : MonoBehaviour {
 			RaycastHit hit;
 
 			if (Physics.Raycast (rayOrigin, cam.transform.forward, out hit, pickupRange)) {
+
+                Debug.Log(hit.collider.gameObject.name);
 				if (hit.collider.gameObject == key) {
 					key.SetActive (false);
 					hasKey = true;
-				} else if (hit.collider.gameObject == item && holdItem == false) {
-					holdItem = true;
+                    sound.Play();
+				//} else if (hit.collider.gameObject == item && holdItem == false) {
+				//	holdItem = true;
 				}
 			} 
 		}
 
-		if (holdItem == true) {
-			item.transform.position = heldPos.position;
-			item.transform.rotation = heldPos.rotation;
-			rbItem.useGravity = false;
-			rbItem.velocity = new Vector3 (0, 0, 0);
-			if (Input.GetButtonDown ("Fire1")) {
-				rbItem.AddForce(aim.transform.forward * 500);
-				rbItem.useGravity = true;
-				holdItem = false;
-			}
-		}
+		//if (holdItem == true) {
+		//	item.transform.position = heldPos.position;
+		//	item.transform.rotation = heldPos.rotation;
+		//	rbItem.useGravity = false;
+		//	rbItem.velocity = new Vector3 (0, 0, 0);
+		//	if (Input.GetButtonDown ("Fire1")) {
+		//		rbItem.AddForce(aim.transform.forward * 500);
+		//		rbItem.useGravity = true;
+		//		holdItem = false;
+		//	}
+		//}
 	}
 }

@@ -9,6 +9,7 @@ public class UnlockDoor : MonoBehaviour {
 	PickUpKey pickupKey;
 	public Rigidbody rb;
 
+    private AudioSource unlock;
 	HearingScript enemyHearing;
 
 
@@ -16,6 +17,8 @@ public class UnlockDoor : MonoBehaviour {
 	void Start () {
 		pickupKey = player.GetComponent<PickUpKey>();
 		enemyHearing = enemy.GetComponent<HearingScript> ();
+        unlock = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -24,7 +27,8 @@ public class UnlockDoor : MonoBehaviour {
 			rb.isKinematic = false;
 			pickupKey.hasKey = false;
 			enemyHearing.HearNoise (gameObject);
-			//play unlock sound
+            rb.AddForce(new Vector3(0,0, 10));
+            unlock.Play();
 		}
 	}
 
